@@ -1,0 +1,14 @@
+<div>
+    <label for="location">Where is your garden?</label>
+    <input id="location" [(ngModel)]="location" placeholder="zip code">
+</div>
+
+<div>{{location}}</div>
+
+<ul>
+    <li *ngFor="let report of weatherReports">
+        <button (click)="showPrecipitation(report)">{{report.when | titlecase}}</button>
+    </li>
+</ul>
+
+<div *ngIf="selectedReport">{{selectedReport.rainfall}}</div>
