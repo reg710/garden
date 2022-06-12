@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WEATHER } from './mock-weather';
-
+import { WeatherService } from '../services/weather.service';
 
 
 @Component({
@@ -11,15 +10,21 @@ import { WEATHER } from './mock-weather';
 export class LocationSearchComponent implements OnInit {
 
   public location: string = '';
-  public weatherReports = WEATHER;
+  public weatherReports: any[] = [];
   public selectedReport: any;
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
+    this.getWeather();
   }
 
   public showPrecipitation(report: any): void {
     this.selectedReport = report
+  }
+
+  public getWeather(): void {
+    this.weatherService.getWeather()
+      .subscribe(reports => this.weatherReports = reports);
   }
 }

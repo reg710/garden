@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LocationSearchComponent } from './location-search/location-search.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { RecommendationComponent } from './recommendation/recommendation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationSearchComponent,
+    RecommendationComponent,
   ],
   imports: [
     BrowserModule,
