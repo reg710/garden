@@ -3,14 +3,18 @@
     <input id="location" [(ngModel)]="location" placeholder="zip code">
 </div>
 
+<button (click)="getWeather()"> Show Me Weather </button>
 <div>{{location}}</div>
 
+<div *ngIf="weatherReports">{{weatherReports}}</div>
+
+<!-- 
 <ul>
     <li *ngFor="let report of weatherReports">
         <button (click)="showPrecipitation(report)">{{report.when | titlecase}}</button>
     </li>
 </ul>
 
-<div *ngIf="selectedReport">{{selectedReport.rainfall}}</div>
+<div *ngIf="selectedReport">{{selectedReport.rainfall}}</div> -->
 
 <app-recommendation></app-recommendation>
