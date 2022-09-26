@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
-
+import { WEATHER } from '../../app/location-search/mock-weather';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-location-search',
@@ -16,7 +17,7 @@ export class LocationSearchComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    this.getWeather()
+ 
   }
 
   public showPrecipitation(report: any): void {
@@ -24,13 +25,18 @@ export class LocationSearchComponent implements OnInit {
   }
 
   public getWeather(): void {
-    this.weatherService.getWeather()
-      .subscribe(
-        reports => {
-          this.weatherReports = reports
-          console.log
-        }
+    // this.weatherService.getWeather()
+    //   .subscribe(
+    //     reports => {
+    //       this.weatherReports = reports
+    //       console.log
+    //     }
 
-      );
+    //   );
+    of(WEATHER).subscribe(
+      reports => {
+        this.weatherReports = reports;
+      }
+    );
   }
 }

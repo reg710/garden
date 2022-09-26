@@ -6,7 +6,13 @@
 <button (click)="getWeather()"> Show Me Weather </button>
 <div>{{location}}</div>
 
-<div *ngIf="weatherReports">{{weatherReports}}</div>
+<div *ngIf="weatherReports">
+    <ul>
+        <li *ngFor="let report of weatherReports">
+            {{report.when}} - {{report.rainfall}} inches
+        </li>
+    </ul>
+</div>
 
 <!-- 
 <ul>

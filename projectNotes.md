@@ -1,0 +1,5 @@
+- [ ] Review what you've done so far
+- [ ] Recreate temp data calls
+- [ ] Update styling to bootstrap and create initial layout
+- [ ] Look into environment files and how they work
+- [ ] How to be secure with api key
