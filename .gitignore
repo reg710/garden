@@ -33,6 +33,7 @@ chrome-profiler-events*.json
 # misc
 .env
 /environments
+src/environments/
 /.angular/cache
 /.sass-cache
 /connect.lock
