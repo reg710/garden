@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { WEATHER } from '../../app/location-search/mock-weather';
 import { of } from 'rxjs';
+import { HistoricalWeather } from '../models/historical-weather.model';
 
 @Component({
   selector: 'app-location-search',
@@ -25,18 +26,22 @@ export class LocationSearchComponent implements OnInit {
   }
 
   public getWeather(): void {
-    // this.weatherService.getWeather()
-    //   .subscribe(
-    //     reports => {
-    //       this.weatherReports = reports
-    //       console.log
-    //     }
+    this.weatherService.getWeather()
+      .subscribe(
+        reports => {
+          // this.weatherReports = reports
+          console.log('in location search')
+          console.log(reports);
+          let testing = new HistoricalWeather(reports, '15201');
+          console.log('--------------')
+          console.log(testing)
+        }
 
-    //   );
-    of(WEATHER).subscribe(
-      reports => {
-        this.weatherReports = reports;
-      }
-    );
+      );
+    // of(WEATHER).subscribe(
+    //   reports => {
+    //     this.weatherReports = reports;
+    //   }
+    // );
   }
 }

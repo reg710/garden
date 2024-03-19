@@ -25,10 +25,10 @@ export class WeatherService {
     });
     console.log(headers);
     let params = {
-        startDateTime: '2022-08-27T00:00:00',
+        startDateTime: '2024-03-15T00:00:00',
         aggregateHours: '24',
-        location: 'Pittsburgh,PA,USA',
-        endDateTime: '2022-08-28T00:00:00',
+        location: '15201',
+        endDateTime: '2024-03-18T00:00:00',
         unitGroup: 'us',
         contentType: 'json',
         shortColumnNames: '0'
@@ -42,3 +42,4 @@ export class WeatherService {
     return this.http.get(this.weatherUrl, options)
   }
 }
+
