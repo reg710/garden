@@ -3,7 +3,7 @@
     <input id="location" [(ngModel)]="location" placeholder="zip code">
 </div>
 
-<button (click)="getWeather()"> Show Me Weather </button>
+<button (click)="getWeather()" class="btn btn-light"> Show Me Weather </button>
 <div>{{location}}</div>
 
 <div *ngIf="weatherReports">
